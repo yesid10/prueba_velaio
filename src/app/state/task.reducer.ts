@@ -5,7 +5,8 @@ import { state } from "@angular/animations";
 
 export const taskReducer = createReducer(
     initialTaskState,
-    on(TaskActions.loadTasks, state => ({
+
+    on(TaskActions.loadTasks, (state) => ({
         ...state,
         loading: true
     })),
@@ -13,13 +14,14 @@ export const taskReducer = createReducer(
     on(TaskActions.loadTasksSuccess, (state, {tasks}) => ({
         ...state,
         tasks,
-        loading: false
+        loading: false,
+        error: null,
     })),
 
     on(TaskActions.loadTasksFailure, (state, {error}) => ({
         ...state,
-        error,
-        loading: false
+        loading: false,
+        error
     })),
 
     on(TaskActions.addTaskSuccess, (state, {task}) => ({
