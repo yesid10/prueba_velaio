@@ -15,9 +15,7 @@ export class TaskSerivice{
 
     //Obtener tareas de la api
     getTasks(): Observable<Task[]>{
-        const res = this.http.get<Task[]>(this.apiUrl);
-        console.log('Tareas desde service', res);
-        return res;
+        return this.http.get<Task[]>(this.apiUrl);
     }
 
     //Agrear una tarea a la api

@@ -2,8 +2,7 @@ import { Person } from "./person.model";
 
 export interface Task {
     id: number;
-    name: string;
-    deadline: Date;
+    title: string;
     completed: boolean;
     persons: Person[];
 }

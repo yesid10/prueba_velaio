@@ -1,0 +1,12 @@
+<div class="task-container p-4">
+    <ul *ngIf="tasks$ | async as tasks" class="space-y-4">
+        <li *ngFor="let task of tasks" class="p-4 border rounded-lg shadow-lg bg-white">
+            <h2 class="text-xl font-semibold mb-2">{{ task.title }}</h2>
+            <p class="text-sm text-gray-500">Estado:
+                <span [ngClass]="task.completed ? 'text-green-500' : 'text-red-500'">
+                    {{ task.completed ? 'Completada' : 'Pendiente' }}
+                </span>
+            </p>
+        </li>
+    </ul>
+</div>
